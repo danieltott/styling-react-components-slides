@@ -141,7 +141,7 @@ export const themes = [swiss, prism];
 - Linting
 - Pre-processing (sass/less etc)
 - Post-processing (browser prefixing, compression, etc)
-- Critical CSS techniques
+- [Critical CSS](https://github.com/addyosmani/critical) techniques
 
 ## Tools:
 
@@ -183,8 +183,8 @@ import './Component.scss'
   <Appear>
     <li>CRA/Gatsby/Next Support out of the box</li>
     <li>With these, we get linting and processing (pre and post)</li>
-    <li>We can take advantage of code splitting to reduce CSS file size</li>
     <li>Styles co-located with components</li>
+    <li>We can take advantage of code splitting to reduce CSS file size</li>
   </Appear>
 </ul>
 
@@ -202,6 +202,7 @@ import './Component.scss'
   <Appear>
     <li>The Cascade!</li>
     <li>No dynamic styling</li>
+    <li>No theming</li>
   </Appear>
 </ul>
 
@@ -251,7 +252,6 @@ import './Component.scss'
     <li>Confidence</li>
     <li>No need for complicated naming schemes</li>
     <li>Painless maintenance</li>
-    <li>Enhanced teamwork</li>
     <li>Dynamic styling</li>
     <li>Theming!</li>
   </Appear>
@@ -279,7 +279,7 @@ import './Component.scss'
 
 <Layout>
 
-## CSS Modules
+## [CSS Modules](https://github.com/css-modules/css-modules)
 
 ```jsx
 import styles from 'styles.module.css'
@@ -297,9 +297,13 @@ import styles from 'styles.module.css'
 
 ## CSS Modules Benefits
 
-- Locally-scoped class names
-- Composable styles
-- Theming avaiable
+<ul>
+  <Appear>
+    <li>Locally-scoped class names</li>
+    <li>Composable styles</li>
+    <li>Theming avaiable</li>
+  </Appear>
+</ul>
 
 </Layout>
 
@@ -309,9 +313,14 @@ import styles from 'styles.module.css'
 
 ## CSS Modules Downsides
 
-- Still have to wrangle `className`
-- Theming is complicated
-- No first-class support for dynamic styling
+<ul>
+  <Appear>
+    <li>Docs are hard to follow</li>
+    <li>Still have to wrangle `className`</li>
+    <li>Theming is complicated</li>
+    <li>No first-class support for dynamic styling</li>
+  </Appear>
+</ul>
 
 </Layout>
 
@@ -319,7 +328,7 @@ import styles from 'styles.module.css'
 
 <Layout>
 
-# styled-components 💅
+# [styled-components](https://styled-components.com/) 💅
 
 </Layout>
 
@@ -333,18 +342,10 @@ import styled from 'styled-components'
 const StyledDiv = styled.div`
   padding: 1em;
   border: 1px solid red;
-
-  p {
-    margin-bottom: 1em;
-
-    &:last-child {
-      margin-botton: 0;
-    }
-  }
 `
 
 <StyledDiv>
-  <p>I'm styled!</p>
+  I'm styled!
 </StyledDiv>
 
 ```
@@ -360,6 +361,7 @@ const StyledDiv = styled.div`
 <ul>
   <Appear>
     <li>Very popular</li>
+    <li>Amazing docs</li>
     <li>Sass-style syntax</li>
     <li>Theming</li>
     <li>Dynamic Styling</li>
@@ -400,5 +402,18 @@ const StyledDiv = styled.div`
 - [Rebass](https://rebassjs.org/)
 - [Theme UI](https://theme-ui.com/)
 - [Blocks UI](https://blocks-ui.com/)
+
+</Layout>
+
+---
+
+<Layout>
+
+# Thank you!
+
+- https://github.com/danieltott/Styling-React-Components
+- https://clereact.dev/
+- https://cleveland-tech.herokuapp.com/
+- https://twitter.com/danieltott
 
 </Layout>
