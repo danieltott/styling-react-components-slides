@@ -1,0 +1,403 @@
+import { Invert, Split, FullScreenCode, Appear } from 'mdx-deck';
+import { swiss, prism } from 'mdx-deck/themes';
+import Layout from './src/Layout'
+
+export const themes = [swiss, prism];
+
+<Layout>
+
+# Styling React Components
+
+- Dan Ott
+- @danieltott (twitter/github)
+
+</Layout>
+
+---
+
+<Layout>
+
+- Style Prop
+- CSS
+- CSS-in-JS
+
+</Layout>
+
+---
+
+<Layout>
+
+# `style` Prop
+
+```jsx
+<div
+  style={{
+    padding: '1em',
+    background: 'pink',
+    color: 'blue'
+  }}
+>
+  I am styled!
+</div>
+```
+
+</Layout>
+
+---
+
+<Layout>
+
+## Why Use the `style` Prop
+
+<ul>
+  <Appear>
+    <li>It’s right there</li>
+    <li>No extra steps needed</li>
+    <li>Styles right there with the component</li>
+    <li>Full confidence when deleting old styles</li>
+    <li>Just using Javascript+JSON objects</li>
+    <li>Inheritance gets you a long way</li>
+    <li>Dynamic styling</li>
+    <li>Theming is possible</li>
+  </Appear>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+## Why <em>not</em> to use the `style` Prop
+
+<ul>
+  <Appear>
+    <li>No media queries (@media)</li>
+    <li>No CSS animations (@keyframes)</li>
+    <li>No pseudo classes (:hover, :first)</li>
+    <li>No pseudo elements (:before, :after)</li>
+    <li>No web fonts (@font)</li>
+    <li>No autoprefixer</li>
+    <li>Additional costs in JS payload</li>
+    <li>Debugging can be difficult</li>
+    <li>No cascade</li>
+  </Appear>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+# Cascading Style Sheets
+
+</Layout>
+
+---
+
+<Layout>
+
+## Benefits of CSS:
+
+<ul>
+  <Appear>
+    <li><a href="https://wattenberger.com/blog/css-cascade" target="_blank" rel="nofollow">The Cascade!</a></li>
+    <li>Fully-featured with native browser support</li>
+    <li>High probability of developers being familiar with CSS</li>
+    <li>Composable</li>
+    <li>You may already have existing styles to work with</li>
+    <li>Lots of CSS libraries out there, if you want</li>
+  </Appear>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+# Downsides of vanilla CSS
+
+<ul>
+  <Appear>
+    <li>The Cascade!</li>
+    <li>CSS can be hard to edit or remove</li>
+    <li>No dynamic styling</li>
+    <li>Often CSS is sent to the user as one large file</li>
+    <li>Lots of tooling needed to create production-ready code</li>
+    <li>Theming is complicated</li>
+  </Appear>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+## Things we need to do to CSS:
+
+- Linting
+- Pre-processing (sass/less etc)
+- Post-processing (browser prefixing, compression, etc)
+- Critical CSS techniques
+
+## Tools:
+
+- Grunt/Gulp
+- Node
+- Webpack/parcel/etc
+
+</Layout>
+
+---
+
+<Layout>
+
+> How can we leverage React to mitigate some of these issues?
+
+</Layout>
+
+---
+
+<Layout>
+
+## Component-level CSS/SCSS Includes
+
+```jsx
+import './Component.scss'
+```
+
+</Layout>
+
+---
+
+<Layout>
+
+## Component-level CSS/SCSS Includes
+
+### Pros:
+
+<ul>
+  <Appear>
+    <li>CRA/Gatsby/Next Support out of the box</li>
+    <li>With these, we get linting and processing (pre and post)</li>
+    <li>We can take advantage of code splitting to reduce CSS file size</li>
+    <li>Styles co-located with components</li>
+  </Appear>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+## Component-level CSS/SCSS Includes
+
+### Still an issue:
+
+<ul>
+  <Appear>
+    <li>The Cascade!</li>
+    <li>No dynamic styling</li>
+  </Appear>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+# CSS-in-JS
+
+</Layout>
+
+---
+
+<Layout>
+
+## [CSS-in-JS Libraries](https://2019.stateofcss.com/technologies/css-in-js/):
+
+<ul>
+  <li>CSS Modules</li>
+  <li>Styled Components</li>
+  <li>Styled JSX</li>
+  <li>Radium</li>
+  <li>JSS</li>
+  <li>Glamor</li>
+  <li>Aphrodite</li>
+  <li>Emotion</li>
+  <li>Treat</li>
+  <li>Theme UI</li>
+  <li>...</li>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+## CSS-in-JS Benefits:
+
+<ul>
+  <Appear>
+    <li>No more cascade (sort of)</li>
+    <li>No Globally Scoped Selectors </li>
+    <li>CSS Processing features out of the box</li>
+    <li>Confidence</li>
+    <li>No need for complicated naming schemes</li>
+    <li>Painless maintenance</li>
+    <li>Enhanced teamwork</li>
+    <li>Dynamic styling</li>
+    <li>Theming!</li>
+  </Appear>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+## CSS-in-JS Downsides:
+
+<ul>
+  <Appear>
+    <li>Learning curve</li>
+    <li>Integrating with existing CSS can be complicated</li>
+    <li>Performance</li>
+  </Appear>
+</ul>
+
+</Layout>
+
+---
+
+<Layout>
+
+## CSS Modules
+
+```jsx
+import styles from 'styles.module.css'
+
+<Button className={styles.button}>
+  Press Me!
+</Button>
+```
+
+</Layout>
+
+---
+
+<Layout>
+
+## CSS Modules Benefits
+
+- Locally-scoped class names
+- Composable styles
+- Theming avaiable
+
+</Layout>
+
+---
+
+<Layout>
+
+## CSS Modules Downsides
+
+- Still have to wrangle `className`
+- Theming is complicated
+- No first-class support for dynamic styling
+
+</Layout>
+
+---
+
+<Layout>
+
+# styled-components 💅
+
+</Layout>
+
+---
+
+<FullScreenCode>
+
+```
+import styled from 'styled-components'
+
+const StyledDiv = styled.div`
+  padding: 1em;
+  border: 1px solid red;
+
+  p {
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-botton: 0;
+    }
+  }
+`
+
+<StyledDiv>
+  <p>I'm styled!</p>
+</StyledDiv>
+
+```
+
+</FullScreenCode>
+
+---
+
+<Layout>
+
+## styled-components Benefits
+
+<ul>
+  <Appear>
+    <li>Very popular</li>
+    <li>Sass-style syntax</li>
+    <li>Theming</li>
+    <li>Dynamic Styling</li>
+    <li>Easy to install </li>
+    <li>Able to incrementally adopt</li>
+    <li>Very fast (for css-in-js)</li>
+    <li>Able to extend other styled components</li>
+  </Appear>
+</ul>
+
+
+</Layout>
+
+---
+
+<Layout>
+
+## styled-components Downsides
+
+<ul>
+  <Appear>
+    <li>All css-in-js downsides</li>
+    <li>Does not compile down to css files</li>
+    <li>That's pretty much it. It's awesome.</li>
+  </Appear>
+</ul>
+
+
+</Layout>
+
+---
+
+<Layout>
+
+## Bonus: Theme-based design systems
+
+- [Styled System](https://styled-system.com/)
+- [Theme UI](https://theme-ui.com/)
+- [Blocks UI](https://blocks-ui.com/)
+
+</Layout>

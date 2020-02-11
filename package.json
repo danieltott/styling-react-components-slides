@@ -1,0 +1,16 @@
+{
+  "name": "styling-react-components-slides",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mdx-deck": "^3.1.0",
+    "react-syntax-highlighter": "^12.2.1",
+    "styled-components": "^5.0.1"
+  },
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "pdf": "mdx-deck pdf deck.mdx",
+    "build": "mdx-deck build deck.mdx"
+  }
+}
